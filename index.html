@@ -3,29 +3,55 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#0b1020">
-  <title>My First Website</title>
+  <meta name="theme-color" content="#f5f0e8">
+  <title>SHARK CLUB — The Ocean Is Calling</title>
   <style>
     * { box-sizing: border-box; }
-    body {
-      margin: 0; min-height: 100vh; display: grid; place-items: center;
-      padding: 24px; color: #f5f7ff;
-      font-family: system-ui, -apple-system, Segoe UI, sans-serif;
-      background: radial-gradient(circle at 50% 0%, #24345f 0, #111a32 42%, #090d18 100%);
+    body { margin: 0; background: #f5f0e8; color: #142b35; font-family: Arial, Helvetica, sans-serif; }
+    header { display: flex; justify-content: space-between; align-items: center; padding: 25px 7vw; border-bottom: 1px solid #d9d2c7; }
+    .logo { font-weight: 900; letter-spacing: .12em; font-size: 17px; }
+    nav { display: flex; gap: 28px; font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: .08em; }
+    nav a { color: inherit; text-decoration: none; }
+    .hero { min-height: 78vh; padding: 9vh 7vw; display: grid; grid-template-columns: 1.1fr .9fr; align-items: center; gap: 4vw; overflow: hidden; }
+    .eyebrow { color: #e45d3e; font-size: 12px; font-weight: 900; letter-spacing: .2em; text-transform: uppercase; }
+    h1 { margin: 20px 0; max-width: 720px; font-size: clamp(58px, 8.5vw, 118px); line-height: .88; letter-spacing: -.075em; text-transform: uppercase; }
+    h1 span { color: #e45d3e; }
+    .intro { max-width: 440px; color: #52636a; font-size: 18px; line-height: 1.65; }
+    .cta { display: inline-block; margin-top: 24px; padding: 16px 23px; background: #142b35; color: #fff; text-decoration: none; font-weight: 800; text-transform: uppercase; letter-spacing: .08em; font-size: 12px; }
+    .art { min-height: 420px; display: grid; place-items: center; position: relative; }
+    .sun { width: min(36vw, 430px); aspect-ratio: 1; border-radius: 50%; background: #f2c46d; position: absolute; }
+    .shark { position: relative; z-index: 1; font-size: clamp(150px, 23vw, 300px); line-height: 1; transform: rotate(-12deg); filter: drop-shadow(12px 22px 0 #142b3520); }
+    .stamp { position: absolute; z-index: 2; right: 0; bottom: 8%; background: #e45d3e; color: white; padding: 18px; border-radius: 50%; font-size: 11px; font-weight: 900; text-align: center; transform: rotate(12deg); }
+    .bottom { display: flex; justify-content: space-between; gap: 20px; padding: 24px 7vw; background: #142b35; color: #f5f0e8; font-size: 12px; letter-spacing: .12em; text-transform: uppercase; }
+    @media (max-width: 700px) {
+      header { padding: 20px 6vw; } nav { gap: 12px; font-size: 10px; }
+      .hero { min-height: auto; padding: 70px 6vw 45px; grid-template-columns: 1fr; gap: 12px; }
+      h1 { font-size: clamp(58px, 16vw, 94px); }
+      .art { min-height: 270px; } .sun { width: 65vw; } .shark { font-size: 190px; }
+      .bottom { padding: 20px 6vw; flex-wrap: wrap; }
     }
-    main { width: min(680px, 100%); text-align: center; }
-    .tag { display: inline-block; padding: 8px 13px; border: 1px solid #ffffff24; border-radius: 999px; color: #aebfff; font-size: 13px; }
-    h1 { margin: 24px 0 12px; font-size: clamp(42px, 8vw, 72px); letter-spacing: -0.06em; }
-    p { margin: 0 auto; max-width: 490px; color: #b7c0d5; font-size: 18px; line-height: 1.65; }
-    a { display: inline-block; margin-top: 30px; padding: 13px 20px; border-radius: 12px; background: #8298ff; color: #0a1022; font-weight: 700; text-decoration: none; }
   </style>
 </head>
 <body>
+  <header>
+    <div class="logo">SHARK CLUB</div>
+    <nav><a href="#mission">Our mission</a><a href="#ocean">The ocean</a></nav>
+  </header>
   <main>
-    <span class="tag">YOUR WEBSITE IS LIVE</span>
-    <h1>Hello, world.</h1>
-    <p>This is your first website deployed from GitHub. Change the code, push an update, and your site can publish automatically through Cloudflare Pages.</p>
-    <a href="https://github.com/jovandordevic1406/Tests-project">View the GitHub repository</a>
+    <section class="hero" id="mission">
+      <div>
+        <div class="eyebrow">A little wild. A lot ocean.</div>
+        <h1>Respect the <span>deep.</span></h1>
+        <p class="intro">The ocean is full of incredible life. Sharks help keep it in balance — and they deserve a lot more respect than fear.</p>
+        <a class="cta" href="#ocean">Dive into the story ↗</a>
+      </div>
+      <div class="art" aria-label="Shark illustration">
+        <div class="sun"></div>
+        <div class="shark">🦈</div>
+        <div class="stamp">OCEAN<br>FIRST<br>★</div>
+      </div>
+    </section>
   </main>
+  <footer class="bottom" id="ocean"><span>Protect what you love.</span><span>SHARK CLUB · EST. 2026</span></footer>
 </body>
 </html>
